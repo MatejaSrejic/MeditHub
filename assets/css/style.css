@@ -38,7 +38,7 @@
 /* ---- Reset & Base ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 
 body {
   font-family: var(--font-body);
@@ -46,6 +46,7 @@ body {
   background: var(--white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -905,7 +906,7 @@ input, select, textarea { font-family: inherit; }
   padding: 1.25rem 2.5rem;
   background: var(--off-white);
   border-top: 1px solid var(--light-gray);
-  display: flex;
+  display: none;
   align-items: center;
   gap: 1rem;
 }
@@ -1139,16 +1140,31 @@ footer {
   .fact-item:nth-child(2n) { border-right: none; }
   .fact-item:nth-child(n+3) { border-top: 1px solid var(--light-gray); }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-eu-inner { flex-direction: column; align-items: center; gap: 1.5rem; }
+  .footer-eu-inner { flex-direction: column; align-items: left; gap: 1.5rem; }
   .footer-eu-emblem { width: 160px; }
   .wp-tabs { flex-direction: column; }
   .wp-tab { min-width: unset; }
   .wp-card-header { flex-direction: column; }
   .wp-meta { text-align: left; }
+  .wp-timeline-bar { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .timeline-label { display: block; width: 100%; }
+  .timeline-track { margin-top: 0.5rem; width: 100%; min-height: 12px; height: 12px; }
+  .timeline-fill { height: 100%; }
+  .timeline-months { margin-top: 0.5rem; width: 100%; }
   .eu-banner-inner { flex-direction: column; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; justify-content: center; }
   .impact-stats { grid-template-columns: 1fr 1fr; }
+  
+  /* Mobile optimization: stack sections vertically */
+  [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Remove left borders from budget items on mobile */
+  [style*="border-left:1px solid rgba(255,255,255,0.1)"] {
+    border-left: none !important;
+  }
 }
 
 @media (max-width: 480px) {
