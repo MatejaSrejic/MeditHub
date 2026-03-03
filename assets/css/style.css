@@ -43,7 +43,7 @@ html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 body {
   font-family: var(--font-body);
   color: var(--text);
-  background: var(--white);
+  background: var(--off-white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -73,39 +73,6 @@ input, select, textarea { font-family: inherit; }
   opacity: 1;
   transform: none;
 }
-
-/* ---- Cookie Banner ---- */
-#cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--primary);
-  color: white;
-  padding: 1rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  z-index: 9999;
-  flex-wrap: wrap;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
-}
-#cookie-banner p { font-size: 0.875rem; color: rgba(255,255,255,0.85); }
-#cookie-banner a { color: var(--accent); text-decoration: underline; }
-#cookie-accept {
-  background: var(--accent);
-  color: white;
-  border: none;
-  padding: 0.5rem 1.25rem;
-  border-radius: var(--radius);
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: var(--transition);
-}
-#cookie-accept:hover { background: var(--accent-dark); }
 
 /* ---- Navbar ---- */
 .navbar {
@@ -1138,6 +1105,7 @@ footer {
   .assoc-grid { grid-template-columns: 1fr; }
   .facts-grid { grid-template-columns: repeat(2, 1fr); }
   .fact-item:nth-child(2n) { border-right: none; }
+  .fact-item:nth-child(3) { border-right: 1px solid var(--light-gray); }
   .fact-item:nth-child(n+3) { border-top: 1px solid var(--light-gray); }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer-eu-inner { flex-direction: column; align-items: left; gap: 1.5rem; }

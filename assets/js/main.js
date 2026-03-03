@@ -114,21 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---- Cookie banner ----
-  const cookieBanner = document.getElementById('cookie-banner');
-  const cookieAccept = document.getElementById('cookie-accept');
-  if (cookieBanner && cookieAccept) {
-    if (!localStorage.getItem('cookies-accepted')) {
-      cookieBanner.style.display = 'flex';
-    } else {
-      cookieBanner.style.display = 'none';
-    }
-    cookieAccept.addEventListener('click', () => {
-      localStorage.setItem('cookies-accepted', 'true');
-      cookieBanner.style.display = 'none';
-    });
-  }
-
   // ---- Hero particles ----
   const particlesContainer = document.querySelector('.hero-particles');
   if (particlesContainer) {
@@ -146,6 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
       particlesContainer.appendChild(p);
     }
+  }
+
+  // ---- Footer current year ----
+  const footerCopyright = document.querySelector('.footer-bottom p');
+  if (footerCopyright) {
+    const currentYear = new Date().getFullYear();
+    footerCopyright.textContent = footerCopyright.textContent.replace(/\b\d{4}\b/, currentYear);
   }
 
   // ---- Smooth scroll for anchor links ----
