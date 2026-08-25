@@ -3,23 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>News | MedIT-HuB</title>
-  <meta name="description" content="Latest updates and announcements from the MedIT-HuB project." />
+
+  <meta
+    name="description"
+    content="Latest updates, announcements and highlights from the MedIT-HuB project."
+  />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&family=Outfit:wght@700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230A2342'/><text x='50' y='67' font-size='54' text-anchor='middle' fill='white' font-family='Arial'>M</text></svg>" />
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230A2342'/><text x='50' y='67' font-size='54' text-anchor='middle' fill='white' font-family='Arial'>M</text></svg>"
+  />
 </head>
+
 <body>
 
 <!-- Navigation -->
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-container">
+
     <a href="../" class="nav-logo" aria-label="MedIT-HuB Home">
-      <img src="../assets/images/logo.png" alt="MedIT-HuB Logo" class="nav-logo-img" />
+      <img
+        src="../assets/images/logo.png"
+        alt="MedIT-HuB Logo"
+        class="nav-logo-img"
+      />
     </a>
+
     <div class="nav-links" id="nav-links">
       <a href="../">Home</a>
       <a href="../about/">About</a>
@@ -29,126 +55,233 @@
       <a href="../study-material/">Study Materials</a>
       <a href="../contact/" class="nav-cta">Contact</a>
     </div>
-    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-      <span></span><span></span><span></span>
+
+    <button
+      class="hamburger"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="nav-links"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
+
   </div>
 </nav>
+
 
 <!-- Page Header -->
 <header class="page-header" role="banner">
   <div class="container">
     <div class="page-header-content">
+
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="../">Home</a>
         <span>›</span>
         <span>News</span>
       </nav>
+
       <h1>News</h1>
-      <p>Latest project updates, announcements, and highlights from MedIT-HuB.</p>
+
+      <p>
+        Latest project updates, announcements, and highlights from MedIT-HuB.
+      </p>
+
     </div>
   </div>
 </header>
 
-<!-- News -->
+
 <!-- News Grid -->
 <section style="background:var(--off-white); padding:5rem 0;">
+
   <div class="container">
 
-    <div style="
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-      gap:2rem;
-    ">
+    <div
+      style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+        gap:2rem;
+        align-items:stretch;
+      "
+    >
 
-      <!-- News Card -->
-      <article style="
-        background:var(--white);
-        border:1px solid var(--light-gray);
-        border-radius:var(--radius-lg);
-        overflow:hidden;
-        box-shadow:var(--shadow-sm);
-      ">
+      <!-- NEWS CARD 1 -->
+      <article
+        style="
+          background:var(--white);
+          border:1px solid var(--light-gray);
+          border-radius:var(--radius-lg);
+          overflow:hidden;
+          box-shadow:var(--shadow-sm);
+          display:flex;
+          flex-direction:column;
+        "
+      >
 
-        <img
-          src="../assets/images/First_Erasmus.jpg"
-          alt="MedIT-HuB consortium partners signing the cooperation agreement at Óbuda University"
+        <!-- News Image -->
+        <a href="./first-reporting-period/">
+          <img
+            src="../assets/images/First_Erasmus.jpg"
+            alt="MedIT-HuB consortium partners signing the Cooperation Agreement at Óbuda University"
+            style="
+              width:100%;
+              height:240px;
+              object-fit:cover;
+              display:block;
+            "
+          />
+        </a>
+
+        <!-- News Content -->
+        <div
           style="
-            width:100%;
-            height:240px;
-            object-fit:cover;
-            display:block;
+            padding:2rem;
+            display:flex;
+            flex-direction:column;
+            flex:1;
           "
-        />
+        >
 
-        <div style="padding:2rem;">
-
-          <p style="
-            color:var(--text-light);
-            font-size:0.9rem;
-            margin:0 0 0.6rem 0;
-          ">
+          <p
+            style="
+              color:var(--text-light);
+              font-size:0.9rem;
+              margin:0 0 0.75rem 0;
+            "
+          >
             31 May 2026
           </p>
 
-          <h2 style="
-            font-size:1.45rem;
-            margin:0 0 1rem 0;
-          ">
+          <h2
+            style="
+              font-size:1.4rem;
+              line-height:1.3;
+              margin:0 0 1rem 0;
+            "
+          >
             MedIT-HuB Successfully Completes Its First Reporting Period
           </h2>
 
-          <p style="
-            color:var(--text-light);
-            line-height:1.7;
-            margin-bottom:1.5rem;
-          ">
-            The MedIT-HuB consortium has successfully completed the project's first reporting period, marking an important milestone in the implementation of the international digital health initiative.
-          </p>
-
-          <a
-            href="./first-reporting-period/"
+          <p
             style="
-              font-weight:600;
-              text-decoration:none;
+              color:var(--text-light);
+              line-height:1.7;
+              margin:0 0 1.5rem 0;
             "
           >
-            Read more →
-          </a>
+            The MedIT-HuB consortium has successfully completed the project's
+            first reporting period, marking an important milestone in the
+            implementation of the international digital health initiative.
+          </p>
+
+          <div style="margin-top:auto;">
+
+            <a
+              href="./first-reporting-period/"
+              style="
+                font-weight:700;
+                text-decoration:none;
+                display:inline-flex;
+                align-items:center;
+                gap:0.4rem;
+              "
+            >
+              Read more
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
 
         </div>
 
       </article>
-      <!-- End News Card -->
+      <!-- END NEWS CARD 1 -->
+
+
+      <!--
+      =========================================================
+      FUTURE NEWS CARDS CAN BE ADDED HERE
+      =========================================================
+
+      Copy the complete NEWS CARD block above and change:
+
+      1. Image
+      2. Date
+      3. Title
+      4. Short description
+      5. Read more link
+
+      With three or more news items, the cards will automatically
+      appear in a responsive grid.
+      -->
 
     </div>
 
   </div>
+
 </section>
+
 
 <!-- Footer -->
 <footer role="contentinfo">
+
   <div class="container">
+
     <div class="footer-eu-section">
+
       <div class="footer-eu-inner">
-        <img src="../assets/images/funded-eu-neg.png" alt="Funded by the EU" class="footer-eu-emblem" />
+
+        <img
+          src="../assets/images/funded-eu-neg.png"
+          alt="Funded by the EU"
+          class="footer-eu-emblem"
+        />
+
         <div class="footer-eu-funding">
-          <p><strong>Disclaimer:</strong> Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor EACEA can be held responsible for them.</p>
-          <p><strong>Project Reference:</strong> KA220-HED-4AF7F854 | <strong>National Agency:</strong> HU01 – Tempus Public Foundation</p>
+
+          <p>
+            <strong>Disclaimer:</strong>
+            Funded by the European Union. Views and opinions expressed are however
+            those of the author(s) only and do not necessarily reflect those of the
+            European Union or the European Education and Culture Executive Agency
+            (EACEA). Neither the European Union nor EACEA can be held responsible
+            for them.
+          </p>
+
+          <p>
+            <strong>Project Reference:</strong>
+            KA220-HED-4AF7F854 |
+            <strong>National Agency:</strong>
+            HU01 – Tempus Public Foundation
+          </p>
+
         </div>
+
       </div>
+
     </div>
+
+
     <div class="footer-bottom">
+
       <p>© 2026 MedIT-HuB. All rights reserved.</p>
+
       <div class="footer-bottom-links">
         <a href="../privacy/">Terms & Privacy</a>
         <a href="../privacy/#cookies">No Cookies</a>
         <a href="../privacy/#imprint">Imprint</a>
       </div>
+
     </div>
+
   </div>
+
 </footer>
 
+
 <script src="../assets/js/main.js"></script>
+
 </body>
 </html>
