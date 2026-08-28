@@ -1295,3 +1295,46 @@ footer {
   }
 
 }
+
+/* =========================================================
+   NEWS ARTICLE - RESPONSIVE MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .news-article-section {
+    padding: 2.5rem 0 !important;
+  }
+
+  .news-article {
+    border-radius: 16px !important;
+  }
+
+  .news-article-content {
+    padding: 1.5rem !important;
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .news-article-content h2 {
+    font-size: 1.35rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .news-article-content h3 {
+    font-size: 1.2rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .news-article-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .news-article-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+}
