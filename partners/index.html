@@ -16,8 +16,12 @@
   /* Pool of Experts */
 
   .experts-list {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 3rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
   }
 
   .expert-card {
@@ -25,104 +29,124 @@
     border: 1px solid var(--light-gray);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 210px 1fr;
     box-shadow: var(--shadow-md);
-    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: var(--transition);
   }
 
-  .expert-photo-area {
+  .expert-card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-light);
+  }
+
+  .expert-header {
     background: linear-gradient(135deg, #1a3a5c, var(--primary));
-    padding: 1.25rem;
+    padding: 1.4rem;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 175px;
   }
 
-  .expert-photo {
-    width: 100%;
-    max-width: 180px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    object-position: center;
-    border-radius: var(--radius);
-  }
-
-  .expert-content {
-    padding: 1.75rem 2rem;
+  .expert-info {
+    flex: 1;
+    min-width: 0;
   }
 
   .expert-name {
-    color: var(--primary);
-    font-size: 1.35rem;
-    margin: 0 0 0.35rem;
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.25;
+    margin: 0 0 0.45rem;
   }
 
   .expert-position {
-    color: var(--text);
-    font-size: 0.9rem;
+    color: rgba(255,255,255,0.9);
+    font-size: 0.82rem;
     font-weight: 600;
-    margin: 0 0 0.2rem;
+    margin: 0 0 0.25rem;
   }
 
   .expert-organisation {
-    color: var(--text-light);
-    font-size: 0.875rem;
-    margin: 0 0 0.75rem;
+    color: rgba(255,255,255,0.68);
+    font-size: 0.78rem;
+    line-height: 1.4;
+    margin: 0 0 0.7rem;
   }
 
   .expert-email {
-    color: var(--accent-dark);
-    font-size: 0.85rem;
+    color: white;
+    font-size: 0.76rem;
+    line-height: 1.4;
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
+    display: flex;
+    align-items: flex-start;
     gap: 0.4rem;
     overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .expert-email i {
+    margin-top: 0.15rem;
+    flex-shrink: 0;
   }
 
   .expert-email:hover {
     text-decoration: underline;
   }
 
-  .expert-divider {
-    height: 1px;
-    background: var(--light-gray);
-    margin: 1.25rem 0;
+  .expert-photo {
+    width: 90px;
+    height: 90px;
+    flex: 0 0 90px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius);
+    border: 2px solid rgba(255,255,255,0.25);
+  }
+
+  .expert-content {
+    padding: 1.35rem 1.4rem 1.5rem;
+    flex: 1;
   }
 
   .expert-bio {
     color: var(--text-light);
-    font-size: 0.875rem;
-    line-height: 1.65;
+    font-size: 0.82rem;
+    line-height: 1.6;
     margin: 0;
   }
 
-  /* Mobile */
-  @media (max-width: 700px) {
+  /* Tablet: 2 experts per row */
+  @media (max-width: 1000px) {
     .experts-list {
-      margin-top: 2rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+  }
 
-    .expert-card {
+  /* Mobile: 1 expert per row */
+  @media (max-width: 650px) {
+    .experts-list {
       grid-template-columns: 1fr;
+      margin-top: 2rem;
+      gap: 1.25rem;
     }
 
-    .expert-photo-area {
-      padding: 1.25rem;
+    .expert-header {
+      min-height: auto;
     }
 
     .expert-photo {
-      width: 150px;
-      max-width: 100%;
+      width: 85px;
+      height: 85px;
+      flex-basis: 85px;
     }
 
     .expert-content {
-      padding: 1.35rem 1.5rem 1.5rem;
-    }
-
-    .expert-name {
-      font-size: 1.2rem;
+      padding: 1.25rem;
     }
   }
 </style>
@@ -436,118 +460,127 @@
   <!-- Expert: Nikita Kalganov -->
   <article class="expert-card fade-in">
 
-    <div class="expert-photo-area">
+    <div class="expert-header">
+
+      <div class="expert-info">
+        <h3 class="expert-name">Nikita Kalganov</h3>
+
+        <p class="expert-position">PhD Student</p>
+
+        <p class="expert-organisation">
+          Obuda University (Budapest, Hungary)
+        </p>
+
+        <a
+          href="mailto:nikita.kalganov@stud.uni-obuda.hu"
+          class="expert-email"
+        >
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          <span>nikita.kalganov@stud.uni-obuda.hu</span>
+        </a>
+      </div>
+
       <img
         src="../assets/images/Nikita_Kalganov.png"
         alt="Nikita Kalganov"
         class="expert-photo"
         loading="lazy"
       />
+
     </div>
 
     <div class="expert-content">
-
-      <h3 class="expert-name">Nikita Kalganov</h3>
-
-      <p class="expert-position">PhD Student</p>
-
-      <p class="expert-organisation">Obuda University (Budapest, Hungary)</p>
-
-      <a
-        href="mailto:nikita.kalganov@stud.uni-obuda.hu"
-        class="expert-email"
-      >
-        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-        nikita.kalganov@stud.uni-obuda.hu
-      </a>
-
-      <div class="expert-divider"></div>
-
       <p class="expert-bio">
         I have 12 years of professional experience in the IT industry, working as a systems analyst, data engineer and IT project manager in software engineering departments of international business consulting firms. I graduated with a master’s degree in economics in 2014, and I am currently doing my PhD research in informatics at the Doctoral School of Applied Informatics and Applied Mathematics at Obuda University in Budapest. The focus of my doctoral research is system design of machine learning-enabled frameworks capable of delivering data-driven strategic advice.
       </p>
-
     </div>
 
   </article>
 
-<!-- Expert: Elizaveta Glazova -->
-<article class="expert-card fade-in">
 
-  <div class="expert-photo-area">
-    <img
-      src="../assets/images/Elizaveta_Glazova.png"
-      alt="Elizaveta Glazova"
-      class="expert-photo"
-      loading="lazy"
-    />
-  </div>
+  <!-- Expert: Elizaveta Glazova -->
+  <article class="expert-card fade-in">
 
-  <div class="expert-content">
+    <div class="expert-header">
 
-    <h3 class="expert-name">Elizaveta Glazova</h3>
+      <div class="expert-info">
+        <h3 class="expert-name">Elizaveta Glazova</h3>
 
-    <p class="expert-position">Student</p>
+        <p class="expert-position">Student</p>
 
-    <p class="expert-organisation">Higher School of Economics (Russian Federation)</p>
+        <p class="expert-organisation">
+          Higher School of Economics (Russian Federation)
+        </p>
 
-    <a
-      href="mailto:elseglazova@edu.hse.ru"
-      class="expert-email"
-    >
-      <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-      elseglazova@edu.hse.ru
-    </a>
+        <a
+          href="mailto:elseglazova@edu.hse.ru"
+          class="expert-email"
+        >
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          <span>elseglazova@edu.hse.ru</span>
+        </a>
+      </div>
 
-    <div class="expert-divider"></div>
+      <img
+        src="../assets/images/Elizaveta_Glazova.png"
+        alt="Elizaveta Glazova"
+        class="expert-photo"
+        loading="lazy"
+      />
 
-    <p class="expert-bio">
-      I am an early-career social researcher specializing in sociology, ethics, and anthropology. My primary research interests include communication in the digital age, the impact of artificial intelligence, social design in education and healthcare, and applied data analysis. I am open to new projects and research opportunities and highly value new experiences.
-    </p>
+    </div>
 
-  </div>
+    <div class="expert-content">
+      <p class="expert-bio">
+        I am an early-career social researcher specializing in sociology, ethics, and anthropology. My primary research interests include communication in the digital age, the impact of artificial intelligence, social design in education and healthcare, and applied data analysis. I am open to new projects and research opportunities and highly value new experiences.
+      </p>
+    </div>
 
-</article>
+  </article>
+
 
   <!-- Expert: Victor Kwabla Senaya -->
-<article class="expert-card fade-in">
+  <article class="expert-card fade-in">
 
-  <div class="expert-photo-area">
-    <img
-      src="../assets/images/Victor_Kwabla.png"
-      alt="Victor Kwabla Senaya"
-      class="expert-photo"
-      loading="lazy"
-    />
-  </div>
+    <div class="expert-header">
 
-  <div class="expert-content">
+      <div class="expert-info">
+        <h3 class="expert-name">Victor Kwabla Senaya</h3>
 
-    <h3 class="expert-name">Victor Kwabla Senaya</h3>
+        <p class="expert-position">PhD Student</p>
 
-    <p class="expert-position">PhD Student</p>
+        <p class="expert-organisation">
+          Obuda University (Budapest, Hungary)
+        </p>
 
-    <p class="expert-organisation">Obuda University (Budapest, Hungary)</p>
+        <a
+          href="mailto:vsenaya@gmail.com"
+          class="expert-email"
+        >
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          <span>vsenaya@gmail.com</span>
+        </a>
+      </div>
 
-    <a
-      href="mailto:vsenaya@gmail.com"
-      class="expert-email"
-    >
-      <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-      vsenaya@gmail.com
-    </a>
+      <img
+        src="../assets/images/Victor_Kwabla.png"
+        alt="Victor Kwabla Senaya"
+        class="expert-photo"
+        loading="lazy"
+      />
 
-    <div class="expert-divider"></div>
+    </div>
 
-    <p class="expert-bio">
-      A PhD student at Obuda University in Budapest, Hungary, in the Applied Informatics and Applied Mathematics program within Engineering Science.
-      <br><br>
-      Academic background includes a Master's degree in Information Technology Management, a postgraduate diploma in management, and a bachelor's degree in electrical and electronics engineering. I have over two decades of professional working experience in the Information and Communications Technology (ICT) sector in Ghana and have served mostly in managerial positions.
+    <div class="expert-content">
+      <p class="expert-bio">
+        A PhD student at Obuda University in Budapest, Hungary, in the Applied Informatics and Applied Mathematics program within Engineering Science.
+        <br><br>
+        Academic background includes a Master's degree in Information Technology Management, a postgraduate diploma in management, and a bachelor's degree in electrical and electronics engineering. I have over two decades of professional working experience in the Information and Communications Technology (ICT) sector in Ghana and have served mostly in managerial positions.
       </p>
+    </div>
 
-  </div>
+  </article>
 
-</article>
 </div>
 </section>
 
