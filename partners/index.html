@@ -148,6 +148,119 @@
       padding: 1.25rem;
     }
   }
+/* Strategic Partners */
+
+.strategic-partners-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2.5rem auto 0;
+}
+
+.strategic-partner-card {
+  background: var(--off-white);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.strategic-partner-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-light);
+}
+
+.strategic-partner-header {
+  background: linear-gradient(135deg, #1a3a5c, var(--primary));
+  padding: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 150px;
+}
+
+.strategic-logo-box {
+  width: 180px;
+  height: 75px;
+  flex-shrink: 0;
+  background: white;
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.strategic-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.strategic-partner-title {
+  flex: 1;
+}
+
+.strategic-partner-title h3 {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  margin: 0 0 0.35rem;
+}
+
+.strategic-partner-title p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.strategic-partner-content {
+  padding: 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.strategic-partner-content p {
+  color: var(--text-light);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  margin: 0 0 1.25rem;
+}
+
+.strategic-partner-link {
+  color: var(--accent-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.strategic-partner-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .strategic-partners-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .strategic-partner-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .strategic-logo-box {
+    width: 170px;
+    height: 70px;
+  }
+}
+  
 </style>
 </head>
 <body>
