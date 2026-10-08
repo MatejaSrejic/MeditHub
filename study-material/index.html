@@ -204,6 +204,17 @@
     width: 100%;
   }
 }
+
+/* Publication cover image */
+
+.publication-cover-image {
+  display: block;
+  width: 100%;
+  max-width: 205px;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 8px 24px rgba(10,35,66,0.16);
+}
 </style>
 </head>
 <body>
@@ -255,13 +266,14 @@
     <article class="publication-card fade-in">
 
       <!-- Publication Cover -->
-      <div class="publication-cover">
-        <div class="publication-cover-preview">
-          <i class="fa-regular fa-file-pdf" aria-hidden="true"></i>
-          <span>CONFERENCE<br>ABSTRACT BOOK</span>
-          <small>MedIT-HuB</small>
-        </div>
-      </div>
+<div class="publication-cover">
+  <img
+    src="../assets/images/conference-abstract-cover.png.png"
+    alt="MedTech Education Conference Abstract Book Cover"
+    class="publication-cover-image"
+    loading="lazy"
+  />
+</div>
 
       <!-- Publication Details -->
       <div class="publication-content">
