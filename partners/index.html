@@ -262,6 +262,41 @@
     height: 70px;
   }
 }
+
+/* Pool of Experts - expandable biographies */
+
+.expert-bio {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  overflow: hidden;
+}
+
+.expert-bio.is-expanded {
+  display: block;
+  overflow: visible;
+}
+
+.expert-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  margin-top: 0.75rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent-dark);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.expert-read-more:hover {
+  text-decoration: underline;
+}
   
 </style>
 </head>
@@ -983,6 +1018,42 @@ I am particularly interested in supporting MedTech innovation through human-cent
 </footer>
 
 <script src="../assets/js/main.js"></script>
+
+<script>
+document.querySelectorAll('.expert-card').forEach(function(card) {
+  const bio = card.querySelector('.expert-bio');
+
+  if (!bio) return;
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'expert-read-more';
+  button.textContent = 'Read more';
+  button.setAttribute('aria-expanded', 'false');
+
+  bio.insertAdjacentElement('afterend', button);
+
+  function updateButton() {
+    if (bio.classList.contains('is-expanded')) {
+      button.textContent = 'Read less';
+      button.setAttribute('aria-expanded', 'true');
+    } else {
+      button.textContent = 'Read more';
+      button.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  button.addEventListener('click', function() {
+    bio.classList.toggle('is-expanded');
+    updateButton();
+  });
+
+  if (bio.scrollHeight <= bio.clientHeight + 2) {
+    button.hidden = true;
+  }
+});
+</script>
+
 </body>
 </html>
 
