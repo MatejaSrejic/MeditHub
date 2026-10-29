@@ -298,6 +298,48 @@
   text-decoration: underline;
 }
   
+/* Pool of Experts - Join Us */
+
+.experts-join {
+  text-align: center;
+  margin: 2rem auto 0;
+}
+
+.experts-join-text {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+.experts-join-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: var(--accent);
+  color: white;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 174, 205, 0.22);
+  transition: var(--transition);
+}
+
+.experts-join-btn:hover {
+  background: var(--accent-dark);
+  color: white;
+  box-shadow: 0 9px 24px rgba(0, 174, 205, 0.3);
+  transform: translateY(-2px);
+}
+
+.experts-join-btn:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+
 </style>
 </head>
 <body>
@@ -699,6 +741,26 @@
   </p>
 </div>
 
+<!-- Pool of Experts - Join Us -->
+<div class="experts-join fade-in">
+
+  <p class="experts-join-text">
+    Become part of our international expert community and connect with professionals in MedTech, digital health, and innovation.
+  </p>
+
+  <a
+    href="https://forms.cloud.microsoft/e/QRjVZrChGg"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="experts-join-btn"
+    aria-label="Join the MedIT-HuB Pool of Experts - opens application form in a new tab"
+  >
+    Join Us
+    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+  </a>
+
+</div>
+  
   <!-- Pool of Experts Profiles -->
 <div class="experts-list">
 
